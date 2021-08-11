@@ -37,7 +37,7 @@ jobs:
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
     - name: ssh test
-      run: ssh -o BatchMode=yes -o PasswordAuthentication=no ${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
+      run: ssh -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
 
   ssh-pkcs8:
     name: Connect to github.com (PKCS8 format)
@@ -70,7 +70,7 @@ jobs:
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
     - name: ssh test
-      run: ssh -o BatchMode=yes -o PasswordAuthentication=no ${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
+      run: ssh -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
 
   ssh-rfc4716:
     name: Connect to github.com (RFC4716 format)
@@ -103,7 +103,7 @@ jobs:
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
     - name: ssh test
-      run: ssh -o BatchMode=yes -o PasswordAuthentication=no ${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
+      run: ssh -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
 
   key_if_exists_replace-key_exists:
     name: if_key_exists=replace / key exists
@@ -142,7 +142,7 @@ jobs:
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
     - name: ssh test
-      run: ssh -o BatchMode=yes -o PasswordAuthentication=no ${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
+      run: ssh -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
 
   key_if_exists_replace-key_doesnt_exist:
     name: if_key_exists=replace / key doesn't exist
@@ -176,7 +176,7 @@ jobs:
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
     - name: ssh test
-      run: ssh -o BatchMode=yes -o PasswordAuthentication=no ${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
+      run: ssh -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
 
   key_if_exists_ignore-key_exists:
     name: if_key_exists=ignore / key exists
@@ -215,7 +215,7 @@ jobs:
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
     - name: ssh test
-      run: ssh -o BatchMode=yes -o PasswordAuthentication=no ${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
+      run: ssh -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
 
   key_if_exists_ignore-key_doesnt_exist:
     name: if_key_exists=ignore / key doesn't exist
@@ -249,7 +249,7 @@ jobs:
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
     - name: ssh test
-      run: ssh -o BatchMode=yes -o PasswordAuthentication=no ${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
+      run: ssh -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
 
   key_if_exists_fail-key_exists:
     name: if_key_exists=fail / key exists
@@ -289,7 +289,7 @@ jobs:
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
     - name: ssh test
-      run: ssh -o BatchMode=yes -o PasswordAuthentication=no ${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
+      run: ssh -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
 
   key_if_exists_fail-key_doesnt_exist:
     name: if_key_exists=fail / key doesn't exist
@@ -323,7 +323,7 @@ jobs:
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
     - name: ssh test
-      run: ssh -o BatchMode=yes -o PasswordAuthentication=no ${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
+      run: ssh -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
 
   known_hosts-unnecessary:
     name: without known_hosts file
@@ -358,4 +358,4 @@ jobs:
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
     - name: ssh test
-      run: ssh -o BatchMode=yes -o PasswordAuthentication=no ${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
+      run: ssh -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
