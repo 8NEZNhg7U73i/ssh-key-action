@@ -3,7 +3,7 @@
 name: macOS
 
 on:
-- push
+  workflow_dispatch:
 
 jobs:
   ssh-pem:

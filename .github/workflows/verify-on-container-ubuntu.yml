@@ -3,7 +3,7 @@
 name: Docker container (Ubuntu)
 
 on:
-- push
+  workflow_dispatch:
 
 jobs:
   ssh-pem:

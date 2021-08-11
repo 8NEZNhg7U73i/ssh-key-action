@@ -3,7 +3,7 @@
 name: Docker container (Debian)
 
 on:
-- push
+  workflow_dispatch:
 
 jobs:
   ssh-pem:

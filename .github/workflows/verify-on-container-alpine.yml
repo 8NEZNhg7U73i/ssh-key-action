@@ -3,7 +3,7 @@
 name: Docker container (Alpine Linux)
 
 on:
-- push
+  workflow_dispatch:
 
 jobs:
   ssh-pem:
