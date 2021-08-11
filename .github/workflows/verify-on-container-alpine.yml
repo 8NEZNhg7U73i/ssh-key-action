@@ -35,6 +35,8 @@ jobs:
       run: ls -l /root/.ssh
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
+    - name: ssh test
+      run: $${{ secrets.SSH_COMMAND}}
 
   ssh-pkcs8:
     name: Connect to github.com (PKCS8 format)
@@ -65,6 +67,8 @@ jobs:
       run: ls -l /root/.ssh
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
+    - name: ssh test
+      run: $${{ secrets.SSH_COMMAND}}
 
   ssh-rfc4716:
     name: Connect to github.com (RFC4716 format)
@@ -95,6 +99,8 @@ jobs:
       run: ls -l /root/.ssh
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
+    - name: ssh test
+      run: $${{ secrets.SSH_COMMAND}}
 
   key_if_exists_replace-key_exists:
     name: if_key_exists=replace / key exists
@@ -131,6 +137,8 @@ jobs:
       run: ls -l /root/.ssh
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
+    - name: ssh test
+      run: $${{ secrets.SSH_COMMAND}}
 
   key_if_exists_replace-key_doesnt_exist:
     name: if_key_exists=replace / key doesn't exist
@@ -162,6 +170,8 @@ jobs:
       run: ls -l /root/.ssh
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
+    - name: ssh test
+      run: $${{ secrets.SSH_COMMAND}}
 
   key_if_exists_ignore-key_exists:
     name: if_key_exists=ignore / key exists
@@ -198,6 +208,8 @@ jobs:
       run: ls -l /root/.ssh
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
+    - name: ssh test
+      run: $${{ secrets.SSH_COMMAND}}
 
   key_if_exists_ignore-key_doesnt_exist:
     name: if_key_exists=ignore / key doesn't exist
@@ -229,6 +241,8 @@ jobs:
       run: ls -l /root/.ssh
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
+    - name: ssh test
+      run: $${{ secrets.SSH_COMMAND}}
 
   key_if_exists_fail-key_exists:
     name: if_key_exists=fail / key exists
@@ -266,6 +280,8 @@ jobs:
       run: ls -l /root/.ssh
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
+    - name: ssh test
+      run: $${{ secrets.SSH_COMMAND}}
 
   key_if_exists_fail-key_doesnt_exist:
     name: if_key_exists=fail / key doesn't exist
@@ -297,6 +313,8 @@ jobs:
       run: ls -l /root/.ssh
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
+    - name: ssh test
+      run: $${{ secrets.SSH_COMMAND}}
 
   known_hosts-unnecessary:
     name: without known_hosts file
@@ -329,3 +347,5 @@ jobs:
       run: echo "    StrictHostKeyChecking no" >> /etc/ssh/ssh_config
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
+    - name: ssh test
+      run: $${{ secrets.SSH_COMMAND}}
