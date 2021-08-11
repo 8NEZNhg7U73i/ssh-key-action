@@ -1,6 +1,6 @@
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions
 
-name: Ubuntu
+name: Ubuntu18-connecter
 
 on:
 - push
