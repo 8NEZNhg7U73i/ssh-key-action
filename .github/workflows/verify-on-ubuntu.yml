@@ -3,7 +3,7 @@
 name: Ubuntu
 
 on:
-  workflow_dispatch:
+- push
 
 jobs:
   ssh-pem:
