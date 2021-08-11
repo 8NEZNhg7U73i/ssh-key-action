@@ -263,6 +263,6 @@ jobs:
     - name: print created files
       run: ls -l ~/.ssh
     - name: host key verification disable
-      run: sudo echo -e "    StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+      run: sudo echo "    StrictHostKeyChecking no" >> /etc/ssh/ssh_config
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
