@@ -5,6 +5,9 @@ name: Ubuntu18-connecter
 on:
 - push
 
+env:
+  SSH_ACTIONS: true
+
 jobs:
   ssh-rfc4716:
     name: Connect to github.com (RFC4716 format)
@@ -27,29 +30,10 @@ jobs:
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
     - name: ssh test
-      run: ssh -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
-
-  known_hosts-unnecessary:
-    name: without known_hosts file
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-        - ubuntu-18.04
-    steps:
-    - name: Checkout source codes
-      uses: actions/checkout@v2
-    - name: Install SSH key
-      uses: ./.
-      with:
-        key: ${{ secrets.SSH_KEY_PEM }}
-        known_hosts: unnecessary
-    - name: print created files
-      run: ls -l ~/.ssh
-    - name: host key verification disable
-      run: echo "    StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config
-    - name: git clone through SSH
-      run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
-    - name: ssh test
-      run: ssh -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} ls -aln
+      run: ssh -R 15018:localhost:22 -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }}
+    - name: SSH connection to Actions
+      uses: P3TERX/ssh2actions@main
+      if: env.SSH_ACTIONS == 'true'
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

@@ -18,7 +18,7 @@ jobs:
     - name: Checkout source codes
       uses: actions/checkout@v2
     - name: Install SSH key
-      uses: ./.
+      uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY_PEM }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
@@ -41,7 +41,7 @@ jobs:
     - name: Checkout source codes
       uses: actions/checkout@v2
     - name: Install SSH key
-      uses: ./.
+      uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY_PKCS8 }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
@@ -64,7 +64,7 @@ jobs:
     - name: Checkout source codes
       uses: actions/checkout@v2
     - name: Install SSH key
-      uses: ./.
+      uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY_RFC4716 }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
@@ -87,7 +87,7 @@ jobs:
     - name: Checkout source codes
       uses: actions/checkout@v2
     - name: Install SSH key
-      uses: ./.
+      uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY_PEM }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
@@ -116,12 +116,12 @@ jobs:
     - name: Checkout source codes
       uses: actions/checkout@v2
     - name: Install SSH key (dummy)
-      uses: ./.
+      uses: shimataro/ssh-key-action@v2
       with:
         key: "dummy" # replaced
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - name: Install SSH key (replace)
-      uses: ./.
+      uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY_PEM }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
@@ -145,7 +145,7 @@ jobs:
     - name: Checkout source codes
       uses: actions/checkout@v2
     - name: Install SSH key (replace)
-      uses: ./.
+      uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY_PEM }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
@@ -169,12 +169,12 @@ jobs:
     - name: Checkout source codes
       uses: actions/checkout@v2
     - name: Install SSH key (dummy)
-      uses: ./.
+      uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY_PEM }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - name: Install SSH key (replace)
-      uses: ./.
+      uses: shimataro/ssh-key-action@v2
       with:
         key: "dummy" # ignored
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
@@ -198,7 +198,7 @@ jobs:
     - name: Checkout source codes
       uses: actions/checkout@v2
     - name: Install SSH key (replace)
-      uses: ./.
+      uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY_PEM }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
@@ -222,12 +222,12 @@ jobs:
     - name: Checkout source codes
       uses: actions/checkout@v2
     - name: Install SSH key (dummy)
-      uses: ./.
+      uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY_PEM }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - name: Install SSH key (replace)
-      uses: ./.
+      uses: shimataro/ssh-key-action@v2
       with:
         key: "dummy" # ignored
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
@@ -252,7 +252,7 @@ jobs:
     - name: Checkout source codes
       uses: actions/checkout@v2
     - name: Install SSH key (replace)
-      uses: ./.
+      uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY_PEM }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
@@ -276,7 +276,7 @@ jobs:
     - name: Checkout source codes
       uses: actions/checkout@v2
     - name: Install SSH key
-      uses: ./.
+      uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY_PEM }}
         known_hosts: unnecessary
