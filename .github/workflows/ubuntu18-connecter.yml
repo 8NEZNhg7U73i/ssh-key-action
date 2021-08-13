@@ -21,7 +21,7 @@ jobs:
     - name: Checkout source codes
       uses: actions/checkout@v2
     - name: Install SSH key
-      uses: ./.
+      uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY_RFC4716 }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
@@ -31,6 +31,10 @@ jobs:
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
     - name: ssh test
       run: ssh -R 15018:localhost:22 -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }}
+    - name: sshd public add
+      run: cat ${{ secrets.SSH_PUBLIC_KEY }} | sudo tee -a ~/.ssh/authorized_keys
+    - name: public permission fix
+      run: sudo chown 0644 ~/.ssh/authorized_keys
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@main
       if: env.SSH_ACTIONS == 'true'
