@@ -34,7 +34,7 @@ jobs:
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
 
     - name: ssh connect to remove host
-      run: ssh -R 15018:localhost:22 -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }} tail -f /dev/null
+      run: ssh -R 15018:localhost:22 -N -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }}
 
     - name: check /root/.ssh directory
       run: |
