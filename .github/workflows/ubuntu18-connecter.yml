@@ -33,9 +33,6 @@ jobs:
     - name: git clone through SSH
       run: git clone git@github.com:8NEZNhg7U73i/ssh-key-action.git tmp
 
-    - name: ssh connect to remove host
-      run: ssh -R 15018:localhost:22 -N -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }}
-
     - name: check /root/.ssh directory
       run: |
         if [ ! -d /root  ]; then sudo mkdir /root; fi
@@ -52,3 +49,6 @@ jobs:
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+    - name: ssh connect to remove host
+      run: ssh -R 15018:localhost:22 -N -o BatchMode=yes -o PasswordAuthentication=no root@${{ secrets.SSH_HOST0 }} -p ${{ secrets.SSH_PORT0 }}
